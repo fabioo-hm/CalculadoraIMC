@@ -58,7 +58,22 @@ do{
             alert(`${registroG}\nHombres: ${hombres}\nMujeres: ${mujeres}`);
             break;
         case"3":
-        
+            let totalEdadH = 0 
+            let totalEdadM = 0;
+            let countH = 0 
+            let countM = 0;
+            for (let p of pacientes) {
+                if (p.genero == '1') {
+                    totalEdadH += parseInt(p.edad);
+                    countH++;
+                } else if (p.genero == '2') {
+                    totalEdadM += parseInt(p.edad);
+                    countM++;
+                }
+            }
+            let promH = countH > 0 ? (totalEdadH / countH) : 0;
+            let promM = countM > 0 ? (totalEdadM / countM) : 0;
+            alert(`Promedio de edad\nHombres: ${promH}\nMujeres: ${promM}`);
             break;
         case"4":
             alert(`${menores} ${menoresedad}`);
